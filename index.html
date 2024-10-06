@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter App</title>
+  </head>
+  <style>
+    body {
+      box-sizing: border-box;
+      background: rgb(49, 49, 49);
+      color: white;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      font-size: 80px;
+      color: white;
+      transition: 0.2s linear;
+    }
+
+    h1:hover {
+      color: lightsalmon;
+      scale: 1.05;
+    }
+
+    h2 {
+      font-size: 70px;
+    }
+
+    button {
+      height: 45px;
+      color: white;
+      background: transparent;
+      border: 2px solid white;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: 0.2s linear;
+      margin: 20px;
+      padding: 10px;
+    }
+
+    button:hover {
+      border: 2px solid lightsalmon;
+      color: lightsalmon;
+      scale: 1.05;
+    }
+    @media only screen and (max-width: 426px) {
+      h1 {
+        font-size: 50px;
+      }
+    }
+  </style>
+
+  <body align="center">
+    <h1>Counter App</h1>
+
+    <h2 id="counter">0</h2>
+    <button id="incre">Increase Value</button>
+    <button id="decre">Decrease Value</button>
+    <button id="Reset">Reset</button>
+
+    <script>
+      let val = 0;
+      let counter = document.getElementById("counter");
+
+      let inval = document.getElementById("incre");
+      inval.addEventListener("click", () => {
+        val++;
+        counter.innerHTML = val;
+      });
+      let decval = document.getElementById("decre");
+      decval.addEventListener("click", () => {
+        val--;
+        counter.innerHTML = val;
+      });
+      let resval = document.getElementById("Reset");
+      resval.addEventListener("click", () => {
+        val *= 0;
+        counter.innerHTML = val;
+      });
+    </script>
+  </body>
+</html>
